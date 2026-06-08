@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Nosso Universo</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(160deg, #050505, #1b0033, #42006b);
+      color: white;
+      text-align: center;
+    }
+
+    .tela {
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 30px;
+      border-radius: 30px;
+      max-width: 420px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .botao {
+      background: #1DB954;
+      color: black;
+      padding: 15px 25px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="tela">
+    <div class="card">
+      <h1>Nosso Universo</h1>
+      <p>Giovana, eu fiz isso só pra você.</p>
+      <a class="botao" href="#contador">Começar</a>
+    </div>
+  </section>
+
+  <section class="tela" id="contador">
+    <div class="card">
+      <h1>Estamos juntos há:</h1>
+      <p id="tempo">Carregando...</p>
+    </div>
+  </section>
+
+  <section class="tela">
+    <div class="card">
+      <h1>O céu daquele dia</h1>
+      <p>Assim estava o céu quando eu te pedi em namoro.</p>
+      <img src="ceu.jpg" alt="Céu do dia do pedido">
+    </div>
+  </section>
+
+  <section class="tela">
+    <div class="card">
+      <h1>Nossa música</h1>
+      <p>Essa música sempre me lembra você.</p>
+      <audio controls>
+        <source src="musica.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </section>
+
+  <section class="tela">
+    <div class="card">
+      <h1>Mensagem final</h1>
+      <p>Essa é só a primeira parte da nossa história.</p>
+    </div>
+  </section>
+
+  <script>
+    const dataInicio = new Date("2025-08-24T20:00:00");
+
+    function atualizarTempo() {
+      const agora = new Date();
+      const diferenca = agora - dataInicio;
+
+      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+      const segundos = Math.floor((diferenca / 1000) % 60);
+
+      document.getElementById("tempo").innerText =
+        `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+    }
+
+    setInterval(atualizarTempo, 1000);
+    atualizarTempo();
+  </script>
+
+</body>
+</html>
