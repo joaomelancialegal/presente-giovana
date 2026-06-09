@@ -2604,3 +2604,61 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 .slide-sky .sky-info-card {
   width: min(100%, 420px);
 }
+
+/* PARTÍCULAS LUNARES */
+
+.moon-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.moon-particles span {
+  position: absolute;
+  bottom: -20px;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.9);
+
+  box-shadow:
+    0 0 8px rgba(255,255,255,0.8),
+    0 0 16px rgba(180,220,255,0.5);
+
+  animation: moonParticleFloat 12s linear infinite;
+}
+
+.moon-particles span:nth-child(1){left:8%; animation-delay:0s;}
+.moon-particles span:nth-child(2){left:18%; animation-delay:2s;}
+.moon-particles span:nth-child(3){left:28%; animation-delay:4s;}
+.moon-particles span:nth-child(4){left:42%; animation-delay:1s;}
+.moon-particles span:nth-child(5){left:55%; animation-delay:5s;}
+.moon-particles span:nth-child(6){left:68%; animation-delay:3s;}
+.moon-particles span:nth-child(7){left:82%; animation-delay:6s;}
+.moon-particles span:nth-child(8){left:92%; animation-delay:2.5s;}
+
+@keyframes moonParticleFloat {
+
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0) scale(.6);
+  }
+
+  15% {
+    opacity: .8;
+  }
+
+  50% {
+    transform: translateY(-40vh) translateX(15px) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-90vh) translateX(-15px) scale(.4);
+  }
+}
