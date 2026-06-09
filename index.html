@@ -110,7 +110,6 @@
       </div>
     </div>
 
-    <!-- ─── SLIDE 2: Contador em tempo real ─── -->
   <!-- ─── SLIDE 2: Contador em tempo real ─── -->
 <div class="slide slide-timer" data-slide="1">
 
@@ -297,91 +296,58 @@
       <span class="map-headline-sub">que não significam nada.</span>
     </h2>
 
-    <div class="map-visual apple-map-card">
-      <svg class="map-svg premium-map-svg" viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="routeGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#1db954"/>
-            <stop offset="100%" stop-color="#e91e8c"/>
-          </linearGradient>
+    <div class="map-visual mini-world-map-card">
+  <div class="mini-map-stars"></div>
 
-          <filter id="mapGlowStrong">
-            <feGaussianBlur stdDeviation="4" result="blur"/>
-            <feMerge>
-              <feMergeNode in="blur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
+  <svg class="mini-world-map" viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="softGlow">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
 
-        <rect width="320" height="300" rx="28" fill="rgba(2,12,24,0.92)"/>
+    <!-- continentes cartoonizados -->
+    <path class="continent south-america" d="M96 106 C78 116 74 145 88 165 C96 178 95 194 107 206 C120 190 137 168 132 145 C128 126 116 111 96 106Z"/>
+    <path class="continent europe-africa" d="M210 72 C190 82 188 104 207 115 C195 130 197 166 218 190 C235 166 248 136 239 115 C257 108 251 78 230 72Z"/>
+    <path class="continent north-america" d="M55 55 C82 35 124 40 139 66 C120 80 91 77 75 92 C58 87 41 75 55 55Z"/>
 
-        <g opacity="0.22">
-          <path d="M-20 70 C70 40 120 95 220 54 C270 35 330 48 350 20" stroke="#6aa8ff" stroke-width="2" fill="none"/>
-          <path d="M-10 210 C60 160 120 190 170 150 C220 112 280 135 340 90" stroke="#6aa8ff" stroke-width="1.5" fill="none"/>
-          <path d="M40 330 C80 250 140 230 210 250 C270 270 300 230 350 200" stroke="#6aa8ff" stroke-width="1.5" fill="none"/>
-          <path d="M60 -20 C90 70 70 130 120 210 C150 260 140 300 120 340" stroke="#6aa8ff" stroke-width="1.2" fill="none"/>
-          <path d="M250 -20 C230 60 260 105 240 165 C220 230 245 275 290 330" stroke="#6aa8ff" stroke-width="1.2" fill="none"/>
-        </g>
+    <!-- rota -->
+    <path class="mini-route route-back"
+      d="M105 143 C145 72 210 62 241 94"/>
 
-        <path class="premium-route route-glow"
-          d="M 92 205 C 110 120, 190 55, 232 82"
-          stroke="url(#routeGradient)"
-          stroke-width="9"
-          fill="none"
-          opacity="0.18"/>
+    <path class="mini-route route-front"
+      d="M105 143 C145 72 210 62 241 94"/>
 
-        <path class="premium-route route-main"
-          d="M 92 205 C 110 120, 190 55, 232 82"
-          stroke="url(#routeGradient)"
-          stroke-width="3"
-          fill="none"
-          stroke-linecap="round"/>
+    <!-- aviãozinho -->
+    <text class="mini-plane" x="176" y="82">✈</text>
 
-        <circle class="route-traveler" r="5" fill="#fff" filter="url(#mapGlowStrong)">
-          <animateMotion dur="4.2s" repeatCount="indefinite" path="M 92 205 C 110 120, 190 55, 232 82"/>
-        </circle>
+    <!-- pin Brasil -->
+    <g class="mini-pin pin-br" filter="url(#softGlow)">
+      <circle cx="105" cy="143" r="20" class="pin-pulse-green"/>
+      <path d="M105 114 C92 114 82 124 82 137 C82 154 105 178 105 178 C105 178 128 154 128 137 C128 124 118 114 105 114Z" fill="#65f28a"/>
+      <circle cx="105" cy="136" r="8" fill="#08250f"/>
+      <text x="105" y="140" text-anchor="middle" font-size="9">💚</text>
+    </g>
 
-        <g class="map-pin map-pin-br" filter="url(#mapGlowStrong)">
-          <circle cx="92" cy="205" r="22" fill="#1db954" opacity="0.18"/>
-          <circle cx="92" cy="205" r="10" fill="#1db954"/>
-          <circle cx="92" cy="205" r="4" fill="#fff"/>
-        </g>
+    <!-- pin Porto -->
+    <g class="mini-pin pin-pt" filter="url(#softGlow)">
+      <circle cx="241" cy="94" r="20" class="pin-pulse-pink"/>
+      <path d="M241 65 C228 65 218 75 218 88 C218 105 241 129 241 129 C241 129 264 105 264 88 C264 75 254 65 241 65Z" fill="#ff6fbd"/>
+      <circle cx="241" cy="87" r="8" fill="#2b061c"/>
+      <text x="241" y="91" text-anchor="middle" font-size="9">💚</text>
+    </g>
 
-        <g class="map-pin map-pin-pt" filter="url(#mapGlowStrong)">
-          <circle cx="232" cy="82" r="22" fill="#e91e8c" opacity="0.18"/>
-          <circle cx="232" cy="82" r="10" fill="#e91e8c"/>
-          <circle cx="232" cy="82" r="4" fill="#fff"/>
-        </g>
+    <!-- labels -->
+    <text x="105" y="198" text-anchor="middle" class="mini-map-label">São Gonçalo</text>
+    <text x="105" y="211" text-anchor="middle" class="mini-map-sub">RJ, Brasil 🇧🇷</text>
 
-        <text x="92" y="237" text-anchor="middle" fill="#fff" font-size="10" font-family="Inter" font-weight="700">São Gonçalo</text>
-        <text x="92" y="250" text-anchor="middle" fill="#1db954" font-size="8" font-family="Inter">Brasil</text>
-
-        <text x="232" y="116" text-anchor="middle" fill="#fff" font-size="10" font-family="Inter" font-weight="700">Porto</text>
-        <text x="232" y="129" text-anchor="middle" fill="#e91e8c" font-size="8" font-family="Inter">Portugal</text>
-
-        <text x="165" y="126" text-anchor="middle" fill="#fff" font-size="18" class="map-heart">💚</text>
-      </svg>
-    </div>
-
-    <div class="map-cities-row">
-      <div class="map-city-badge map-city-green">
-        <span class="city-dot green"></span>
-        <div>
-          <strong>São Gonçalo</strong>
-          <span>RJ, Brasil 🇧🇷</span>
-        </div>
-      </div>
-
-      <div class="map-city-badge map-city-pink">
-        <span class="city-dot pink"></span>
-        <div>
-          <strong>Porto</strong>
-          <span>Portugal 🇵🇹</span>
-        </div>
-      </div>
-    </div>
-  </div>
+    <text x="241" y="143" text-anchor="middle" class="mini-map-label">Porto</text>
+    <text x="241" y="156" text-anchor="middle" class="mini-map-sub pink">Portugal 🇵🇹</text>
+  </svg>
 </div>
 
     <!-- ─── SLIDE 7: Linha do tempo (Polaroid) ─── -->
