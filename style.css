@@ -2024,3 +2024,20 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
     opacity: 0;
   }
 }
+
+/* ==========================
+   FUNDO SALA DOS RELÓGIOS
+========================== */
+
+.timer-room-bg {
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.22),
+      rgba(0,0,0,0.42)
+    ),
+    url("giovana-wrapped/timer-room.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
