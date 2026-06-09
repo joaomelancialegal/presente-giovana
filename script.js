@@ -505,40 +505,63 @@ function onSlideEnter(index) {
 ════════════════════════════════════════════════════════ */
 function updateTimer() {
   const start = new Date(CONFIG.dataNamero);
-  const now   = new Date();
-  let diff    = now - start;
+  const now = new Date();
 
-  if (diff < 0) diff = 0;
+  let years = now.getFullYear() - start.getFullYear();
+  let months = now.getMonth() - start.getMonth();
+  let days = now.getDate() - start.getDate();
+  let hours = now.getHours() - start.getHours();
+  let minutes = now.getMinutes() - start.getMinutes();
+  let seconds = now.getSeconds() - start.getSeconds();
 
-  const sec  = Math.floor(diff / 1000) % 60;
-  const min  = Math.floor(diff / 60000) % 60;
-  const hrs  = Math.floor(diff / 3600000) % 24;
-  const days = Math.floor(diff / 86400000);
-  const mos  = Math.floor(days / 30.44);
-  const yrs  = Math.floor(days / 365.25);
+  if (seconds < 0) {
+    seconds += 60;
+    minutes--;
+  }
 
-  animateTimerCell('t-years',   yrs);
-  animateTimerCell('t-months',  mos % 12);
-  animateTimerCell('t-days',    days % 30);
-  animateTimerCell('t-hours',   hrs);
-  animateTimerCell('t-minutes', min);
-  animateTimerCell('t-seconds', sec);
+  if (minutes < 0) {
+    minutes += 60;
+    hours--;
+  }
+
+  if (hours < 0) {
+    hours += 24;
+    days--;
+  }
+
+  if (days < 0) {
+    const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+    days += previousMonth.getDate();
+    months--;
+  }
+
+  if (months < 0) {
+    months += 12;
+    years--;
+  }
+
+  setTimerValue('t-years', years);
+  setTimerValue('t-months', months);
+  setTimerValue('t-days', days);
+  setTimerValue('t-hours', hours);
+  setTimerValue('t-minutes', minutes);
+  setTimerValue('t-seconds', seconds, true);
 }
-
-function animateTimerCell(id, newVal) {
-  const cell = $(`#${id}`);
+function setTimerValue(id, value, shouldPulse = false) {
+  const cell = document.getElementById(id);
   if (!cell) return;
-  const valEl = cell.querySelector('.timer-value');
-  if (!valEl) return;
-  const current = valEl.textContent;
-  if (current !== String(newVal)) {
-    valEl.style.transform = 'scale(1.2)';
-    valEl.style.color     = 'transparent';
-    valEl.style.backgroundImage = 'linear-gradient(135deg, #fff, #ff69b4)';
-    valEl.textContent = String(newVal).padStart(2, '0');
-    setTimeout(() => {
-      valEl.style.transform = 'scale(1)';
-    }, 100);
+
+  const valueEl = cell.querySelector('.timer-value');
+  if (!valueEl) return;
+
+  if (valueEl.textContent !== String(value)) {
+    valueEl.textContent = value;
+
+    if (shouldPulse) {
+      valueEl.classList.remove('timer-pulse');
+      void valueEl.offsetWidth;
+      valueEl.classList.add('timer-pulse');
+    }
   }
 }
 
