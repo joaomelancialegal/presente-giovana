@@ -1893,3 +1893,133 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
       0 0 190px rgba(180,220,255,0.36);
   }
 }
+
+/* NUVENS LENTAS — SLIDE DA LUA */
+
+.moon-clouds {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.moon-cloud {
+  position: absolute;
+  width: 180px;
+  height: 46px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  filter: blur(10px);
+  opacity: 0.45;
+  animation: cloudDrift 28s linear infinite;
+}
+
+.moon-cloud::before,
+.moon-cloud::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+}
+
+.moon-cloud::before {
+  width: 70px;
+  height: 70px;
+  left: 35px;
+  top: -28px;
+}
+
+.moon-cloud::after {
+  width: 90px;
+  height: 90px;
+  left: 85px;
+  top: -42px;
+}
+
+.cloud-1 {
+  top: 26%;
+  left: -220px;
+  animation-duration: 32s;
+}
+
+.cloud-2 {
+  top: 43%;
+  left: -260px;
+  animation-duration: 42s;
+  animation-delay: 8s;
+  transform: scale(0.75);
+  opacity: 0.32;
+}
+
+.cloud-3 {
+  top: 60%;
+  left: -240px;
+  animation-duration: 36s;
+  animation-delay: 16s;
+  transform: scale(1.15);
+  opacity: 0.25;
+}
+
+@keyframes cloudDrift {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(100vw + 520px));
+  }
+}
+
+
+/* PÉTALAS DE SAKURA — SLIDE PRIMAVERA */
+
+.sakura-petals {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sakura-petals span {
+  position: absolute;
+  top: -10%;
+  width: 12px;
+  height: 18px;
+  background: radial-gradient(circle at 30% 30%, #fff, #ffb7d5 45%, #ff6fae 100%);
+  border-radius: 70% 30% 70% 30%;
+  opacity: 0.75;
+  animation: sakuraFall 9s linear infinite;
+}
+
+.sakura-petals span:nth-child(1) { left: 5%; animation-delay: 0s; animation-duration: 10s; }
+.sakura-petals span:nth-child(2) { left: 15%; animation-delay: 2s; animation-duration: 12s; }
+.sakura-petals span:nth-child(3) { left: 25%; animation-delay: 4s; animation-duration: 9s; }
+.sakura-petals span:nth-child(4) { left: 35%; animation-delay: 1s; animation-duration: 13s; }
+.sakura-petals span:nth-child(5) { left: 45%; animation-delay: 3s; animation-duration: 11s; }
+.sakura-petals span:nth-child(6) { left: 55%; animation-delay: 5s; animation-duration: 10s; }
+.sakura-petals span:nth-child(7) { left: 65%; animation-delay: 1.5s; animation-duration: 14s; }
+.sakura-petals span:nth-child(8) { left: 75%; animation-delay: 3.5s; animation-duration: 12s; }
+.sakura-petals span:nth-child(9) { left: 85%; animation-delay: 6s; animation-duration: 9s; }
+.sakura-petals span:nth-child(10) { left: 95%; animation-delay: 2.5s; animation-duration: 15s; }
+
+@keyframes sakuraFall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: translateY(50vh) translateX(30px) rotate(160deg);
+  }
+
+  100% {
+    transform: translateY(110vh) translateX(-35px) rotate(360deg);
+    opacity: 0;
+  }
+}
