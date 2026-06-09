@@ -2662,3 +2662,129 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
     transform: translateY(-90vh) translateX(-15px) scale(.4);
   }
 }
+
+/* MAPA PREMIUM — ESTILO APPLE MAPS DARK */
+
+.slide-map {
+  background: #020814;
+}
+
+.apple-map-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.apple-map-bg::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(29,185,84,0.18), transparent 25%),
+    radial-gradient(circle at 75% 25%, rgba(233,30,140,0.18), transparent 28%),
+    linear-gradient(180deg, rgba(0,20,40,0.4), rgba(0,0,0,0.9));
+}
+
+.apple-map-bg .road {
+  position: absolute;
+  width: 160%;
+  height: 2px;
+  background: rgba(120,170,255,0.16);
+  border-radius: 999px;
+  transform-origin: left center;
+}
+
+.apple-map-bg .r1 { top: 18%; left: -20%; transform: rotate(18deg); }
+.apple-map-bg .r2 { top: 38%; left: -25%; transform: rotate(-12deg); }
+.apple-map-bg .r3 { top: 62%; left: -30%; transform: rotate(22deg); }
+.apple-map-bg .r4 { top: 76%; left: -20%; transform: rotate(-18deg); }
+.apple-map-bg .r5 { top: 50%; left: -40%; transform: rotate(65deg); }
+
+.slide-map .map-content {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.apple-map-card {
+  width: 100%;
+  max-width: 340px;
+  margin: 18px auto 14px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(4, 12, 26, 0.82);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 24px 70px rgba(0,0,0,0.55),
+    0 0 40px rgba(29,185,84,0.12),
+    inset 0 0 40px rgba(255,255,255,0.03);
+  backdrop-filter: blur(18px);
+}
+
+.premium-map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.premium-route.route-main {
+  stroke-dasharray: 10 8;
+  animation: premiumRouteMove 2.8s linear infinite;
+}
+
+@keyframes premiumRouteMove {
+  to {
+    stroke-dashoffset: -36;
+  }
+}
+
+.map-pin-br,
+.map-pin-pt {
+  animation: premiumPinPulse 2.4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.map-pin-pt {
+  animation-delay: 0.7s;
+}
+
+@keyframes premiumPinPulse {
+  0%,100% {
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.slide-map .map-heart {
+  animation: mapHeartFloat 2.4s ease-in-out infinite;
+}
+
+@keyframes mapHeartFloat {
+  0%,100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: translateY(-5px) scale(1.18);
+    opacity: 1;
+  }
+}
+
+.slide-map .map-cities-row {
+  width: 100%;
+  max-width: 340px;
+  margin-top: 6px;
+}
+
+.slide-map .map-city-badge {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.13);
+  backdrop-filter: blur(12px);
+}
