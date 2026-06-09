@@ -2640,3 +2640,33 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 .slide-timer .pocket-watch-pro {
   z-index: 42 !important;
 }
+
+/* TESTE FORTE — CORRENTE VISÍVEL */
+
+.slide-timer .gold-chain {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  position: absolute !important;
+  top: -90px !important;
+  left: 50% !important;
+
+  width: 10px !important;
+  height: 170px !important;
+
+  transform: translateX(-50%) !important;
+  z-index: 999 !important;
+
+  background: #ffd36f !important;
+  border: 2px solid #5b2c08 !important;
+  border-radius: 999px !important;
+
+  box-shadow:
+    0 0 20px rgba(255, 220, 120, 1),
+    inset 0 0 8px rgba(60, 25, 5, 0.8) !important;
+}
+
+.slide-timer .pocket-watch-pro {
+  z-index: 1000 !important;
+}
