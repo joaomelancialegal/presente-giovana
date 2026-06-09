@@ -666,6 +666,22 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   padding-bottom: 60px;
 }
 
+.slide-sky .sky-content {
+  align-items: center;
+  text-align: center;
+}
+
+.slide-sky .slide-eyebrow,
+.slide-sky .slide-headline,
+.slide-sky .sky-note {
+  width: 100%;
+  text-align: center;
+}
+
+.slide-sky .sky-info-card {
+  width: min(100%, 420px);
+}
+
 .sky-headline {
   font-size: clamp(30px, 8vw, 42px);
   margin-bottom: 20px;
