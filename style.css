@@ -2196,3 +2196,119 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
     transform: translateX(-50%) translateX(-34vw) translateY(-35px) rotate(18deg);
   }
 }
+
+/* CONSERTO — CORPO DO RELÓGIO VOLTOU */
+
+.slide-timer .watch-outer {
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 50% !important;
+  background:
+    radial-gradient(circle at 32% 24%, rgba(255,255,255,0.55), transparent 16%),
+    radial-gradient(circle at 50% 50%, #f8c867 0%, #c78327 42%, #69300a 78%, #2b1103 100%) !important;
+  box-shadow:
+    0 0 0 5px #b56c1d,
+    0 0 0 8px rgba(255,214,125,0.28),
+    0 0 30px rgba(255,183,75,0.42),
+    0 18px 35px rgba(0,0,0,0.48),
+    inset 0 0 20px rgba(255,240,180,0.28),
+    inset -14px -18px 24px rgba(35,12,2,0.5) !important;
+}
+
+.slide-timer .watch-inner {
+  position: absolute !important;
+  inset: 14px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 35% 30%, #fffdf0, #f5dfad 60%, #d8b36f 100%) !important;
+  border: 3px solid #4d2107 !important;
+}
+
+.slide-timer .watch-glass {
+  position: absolute !important;
+  inset: 7px !important;
+  border-radius: 50% !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.32), transparent 35%),
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.28), transparent 18%) !important;
+  pointer-events: none !important;
+}
+
+.slide-timer .watch-ring {
+  position: absolute !important;
+  top: -18px !important;
+  left: 50% !important;
+  width: 30px !important;
+  height: 30px !important;
+  border: 6px solid #d79b34 !important;
+  border-radius: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 45 !important;
+}
+
+.slide-timer .watch-crown {
+  position: absolute !important;
+  top: -29px !important;
+  left: 50% !important;
+  width: 26px !important;
+  height: 17px !important;
+  border-radius: 10px 10px 5px 5px !important;
+  transform: translateX(-50%) !important;
+  background: linear-gradient(135deg, #fff0a8, #c47b22 55%, #6a3109) !important;
+  z-index: 46 !important;
+}
+
+.slide-timer .watch-numeral {
+  position: absolute !important;
+  color: #3a1704 !important;
+  font-family: Georgia, serif !important;
+  font-weight: 900 !important;
+  font-size: 11px !important;
+  z-index: 50 !important;
+}
+
+.slide-timer .n12 { top: 5px !important; left: 50% !important; transform: translateX(-50%) !important; }
+.slide-timer .n3 { right: 7px !important; top: 50% !important; transform: translateY(-50%) !important; }
+.slide-timer .n6 { bottom: 5px !important; left: 50% !important; transform: translateX(-50%) !important; }
+.slide-timer .n9 { left: 7px !important; top: 50% !important; transform: translateY(-50%) !important; }
+
+.slide-timer .watch-hand-pro {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  border-radius: 999px !important;
+  transform-origin: bottom center !important;
+  z-index: 55 !important;
+}
+
+.slide-timer .watch-hand-pro.hour {
+  width: 4px !important;
+  height: 23px !important;
+  background: #3a1704 !important;
+  transform: translate(-50%, -100%) rotate(310deg) !important;
+}
+
+.slide-timer .watch-hand-pro.minute {
+  width: 3px !important;
+  height: 32px !important;
+  background: #3a1704 !important;
+  transform: translate(-50%, -100%) rotate(58deg) !important;
+}
+
+.slide-timer .watch-hand-pro.second {
+  width: 1.5px !important;
+  height: 35px !important;
+  background: #d94b3d !important;
+  transform: translate(-50%, -100%) rotate(18deg) !important;
+}
+
+.slide-timer .watch-pin {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 9px !important;
+  height: 9px !important;
+  border-radius: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background: radial-gradient(circle, #fff2ac, #a85d14) !important;
+  z-index: 60 !important;
+}
