@@ -2881,12 +2881,12 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 
 @keyframes miniPulse {
   0% {
-    r: 12;
-    opacity: .8;
+    r: 8;
+    opacity: .75;
   }
 
   100% {
-    r: 28;
+    r: 18;
     opacity: 0;
   }
 }
