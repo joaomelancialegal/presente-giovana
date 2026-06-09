@@ -30,7 +30,7 @@ const CONFIG = {
   /* ── Cidades ── */
   cidadeEle: 'São Gonçalo, RJ',
   cidadeDela: 'Porto, Portugal',
-  distanciaKm: '9.265 km',       // distância aproximada
+  distanciaKm: '8.022 km',       // distância aproximada
 
   /* ── Música ── */
   musica: {
