@@ -2323,3 +2323,37 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
     transform: translateX(-50%) rotate(8deg);
   }
 }
+
+/* CORREÇÃO FINAL — FUNDO + RELÓGIO MAIS BAIXO */
+
+.timer-room-bg {
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.18),
+      rgba(0,0,0,0.38)
+    ),
+    url("giovana-wrapped/timer-room.png") !important;
+
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.pocket-watch-scene {
+  top: 405px !important;
+  left: 50% !important;
+  width: 110px !important;
+  height: 220px !important;
+  z-index: 22 !important;
+}
+
+.gold-chain {
+  height: 62px !important;
+  width: 4px !important;
+}
+
+.pocket-watch-pro {
+  top: 58px !important;
+  width: 104px !important;
+  height: 104px !important;
+}
