@@ -57,12 +57,12 @@ const CONFIG = {
   },
   
 
-  /* ── Slide: Lua ── */
-  lua: {
-    fase:      'Lua Crescente',
-    iluminacao: 42,                  // 0–100 (%) — controla a sombra no visual
-    descricao: 'Naquela noite, a lua crescia — assim como o nosso amor começava a crescer. O universo estava em sintonia com o que estava por vir. 🌙',
-  },
+/* ── Slide: Lua ── */
+lua: {
+  fase: 'Lua Cheia',
+  iluminacao: 100, // 100 = cheia, sem sombra
+  descricao: 'a Lua estava cheia. Brilhando inteira no céu, como se até ela soubesse que aquele dia ia ficar marcado.',
+},
 
   /* ── Slide: Estação ── */
   estacao: {
