@@ -2041,3 +2041,40 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   background-position: center;
   background-repeat: no-repeat;
 }
+/* AJUSTE — CENTRALIZAR SLIDE DO CONTADOR */
+
+.slide-timer .slide-content {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-top: 96px;
+  padding-bottom: 80px;
+}
+
+.slide-timer .slide-eyebrow,
+.slide-timer .slide-headline,
+.slide-timer .timer-since {
+  text-align: center;
+  width: 100%;
+}
+
+.slide-timer .timer-grid {
+  width: 100%;
+  max-width: 620px;
+}
+
+.slide-timer .timer-grid {
+  margin-top: 28px;
+  margin-bottom: 22px;
+}
+
+.slide-timer .timer-since {
+  margin-top: 8px;
+  font-size: 18px;
+  color: rgba(255,235,210,0.75);
+}
+
+.slide-timer .timer-since strong {
+  color: #ff4db8;
+  text-shadow: 0 0 14px rgba(255,77,184,0.45);
+}
