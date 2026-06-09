@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#000000" />
+  <title>Giovana Wrapped 💚</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Circular+Std:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       TELA DE ABERTURA (Song Preview Style)
+  ══════════════════════════════════════════ -->
+  <div id="opening-screen" class="opening-screen">
+    <div class="opening-bg-gradient"></div>
+    <div class="opening-particles" id="opening-particles"></div>
+
+    <!-- Album art area -->
+    <div class="opening-album-wrapper">
+      <div class="opening-album-art">
+        <div class="opening-photos-grid">
+          <div class="opening-photo opening-photo-left">
+            <img src="photos/minha-foto.jpg" alt="Sua foto" onerror="this.parentElement.classList.add('photo-placeholder')" />
+            <div class="photo-fallback">📸</div>
+          </div>
+          <div class="opening-photo opening-photo-right">
+            <img src="photos/foto-dela.jpg" alt="Foto dela" onerror="this.parentElement.classList.add('photo-placeholder')" />
+            <div class="photo-fallback">📸</div>
+          </div>
+        </div>
+        <div class="opening-album-overlay"></div>
+      </div>
+    </div>
+
+    <!-- Track info -->
+    <div class="opening-track-info">
+      <div class="opening-label">🎁 Um presente especial para você</div>
+      <h1 class="opening-title" id="opening-title">Giovana Wrapped</h1>
+      <p class="opening-artist" id="opening-artist">A nossa história, em modo Wrapped ✨</p>
+
+      <div class="opening-track-meta">
+        <span class="opening-track-badge">
+          <span class="badge-dot"></span>
+          <span id="opening-badge-text">Novo · 2026</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Progress bar fake (music style) -->
+    <div class="opening-progress-area">
+      <div class="opening-progress-bar">
+        <div class="opening-progress-fill"></div>
+      </div>
+      <div class="opening-times">
+        <span>0:00</span>
+        <span id="opening-song-title">borboletas</span>
+        <span>∞</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <button class="opening-cta" id="opening-cta">
+      <span class="cta-icon">▶</span>
+      <span class="cta-text">Abrir presente</span>
+    </button>
+
+    <div class="opening-hint">Toca aqui para começar 💚</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       WRAPPED SLIDES
+  ══════════════════════════════════════════ -->
+  <div id="wrapped-container" class="wrapped-container hidden">
+
+    <!-- Progress bars (Spotify Stories style) -->
+    <div class="progress-bars" id="progress-bars"></div>
+
+    <!-- Tap zones -->
+    <div class="tap-zone tap-left" id="tap-left"></div>
+    <div class="tap-zone tap-right" id="tap-right"></div>
+
+    <!-- ─── SLIDE 1: Giovana Wrapped ─── -->
+    <div class="slide slide-intro" data-slide="0">
+      <div class="slide-bg gradient-green-black"></div>
+      <div class="particles-container" id="particles-0"></div>
+      <div class="slide-content centered">
+        <div class="wrapped-year-badge">2026</div>
+        <div class="intro-icon-wrap">
+          <div class="intro-floating-emojis">
+            <span class="float-emoji e1">💚</span>
+            <span class="float-emoji e2">✨</span>
+            <span class="float-emoji e3">🌸</span>
+            <span class="float-emoji e4">💫</span>
+            <span class="float-emoji e5">🎵</span>
+          </div>
+          <div class="intro-big-letter">G</div>
+        </div>
+        <h1 class="slide-headline wrapped-headline">
+          <span class="word-reveal">Giovana</span>
+          <span class="word-reveal word-accent">Wrapped</span>
+        </h1>
+        <p class="slide-sub">A história de <strong>nós dois</strong>,<br/>em modo Wrapped.</p>
+        <div class="intro-hearts-row">
+          <span>💚</span><span>🌊</span><span>💚</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 2: Contador em tempo real ─── -->
+    <div class="slide slide-timer" data-slide="1">
+      <div class="slide-bg gradient-purple-pink"></div>
+      <div class="particles-container" id="particles-1"></div>
+      <div class="slide-content">
+        <div class="slide-eyebrow">⏱ Juntos há</div>
+        <h2 class="slide-headline">Cada segundo<br/><span class="text-accent-pink">conta.</span></h2>
+        <div class="timer-grid" id="timer-grid">
+          <div class="timer-cell" id="t-years">
+            <span class="timer-value">0</span>
+            <span class="timer-label">anos</span>
+          </div>
+          <div class="timer-cell" id="t-months">
+            <span class="timer-value">0</span>
+            <span class="timer-label">meses</span>
+          </div>
+          <div class="timer-cell" id="t-days">
+            <span class="timer-value">0</span>
+            <span class="timer-label">dias</span>
+          </div>
+          <div class="timer-cell" id="t-hours">
+            <span class="timer-value">0</span>
+            <span class="timer-label">horas</span>
+          </div>
+          <div class="timer-cell" id="t-minutes">
+            <span class="timer-value">0</span>
+            <span class="timer-label">min</span>
+          </div>
+          <div class="timer-cell" id="t-seconds">
+            <span class="timer-value">0</span>
+            <span class="timer-label">seg</span>
+          </div>
+        </div>
+        <p class="timer-since">desde <strong id="timer-date-display">09/04/2026</strong></p>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 3: Céu no pedido ─── -->
+    <div class="slide slide-sky" data-slide="2">
+      <div class="slide-bg gradient-night-sky"></div>
+      <canvas id="sky-canvas" class="sky-canvas"></canvas>
+      <div class="slide-content sky-content">
+        <div class="slide-eyebrow">🌌 O céu em Porto</div>
+        <h2 class="slide-headline sky-headline">O universo<br/><span class="text-accent-star">testemunhou.</span></h2>
+        <div class="sky-info-card" id="sky-info-card">
+          <!-- populated by JS from CONFIG -->
+        </div>
+        <p class="sky-note" id="sky-note"></p>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 4: Fase da Lua ─── -->
+    <div class="slide slide-moon" data-slide="3">
+      <div class="slide-bg gradient-deep-purple"></div>
+      <div class="slide-content moon-content">
+        <div class="slide-eyebrow">🌙 Fase da lua</div>
+        <div class="moon-visual-wrap">
+          <div class="moon-glow"></div>
+          <div class="moon-circle" id="moon-circle">
+            <div class="moon-shadow" id="moon-shadow"></div>
+            <div class="moon-craters"></div>
+          </div>
+          <div class="moon-shimmer"></div>
+        </div>
+        <h2 class="slide-headline moon-name" id="moon-phase-name">Lua Crescente</h2>
+        <p class="slide-sub moon-sub" id="moon-description"></p>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 5: Estação do ano ─── -->
+    <div class="slide slide-season" data-slide="4">
+      <div class="slide-bg" id="season-bg"></div>
+      <div class="particles-container" id="particles-season"></div>
+      <div class="slide-content centered">
+        <div class="slide-eyebrow" id="season-eyebrow">🌸 Estação</div>
+        <div class="season-icon-big" id="season-icon">🌸</div>
+        <h2 class="slide-headline" id="season-title">Primavera</h2>
+        <p class="slide-sub" id="season-sub"></p>
+        <div class="season-detail-card" id="season-detail"></div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 6: Mapa da distância ─── -->
+    <div class="slide slide-map" data-slide="5">
+      <div class="slide-bg gradient-map-dark"></div>
+      <div class="slide-content map-content">
+        <div class="slide-eyebrow">📍 A distância que nos une</div>
+        <h2 class="slide-headline map-headline">
+          <span class="text-accent-green" id="map-distance">9.265 km</span><br/>
+          <span class="map-headline-sub">que não significam nada.</span>
+        </h2>
+        <div class="map-visual">
+          <svg class="map-svg" viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background -->
+            <defs>
+              <radialGradient id="mapGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#1db954" stop-opacity="0.15"/>
+                <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="glow-filter">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <rect width="320" height="280" fill="url(#mapGlow)"/>
+
+            <!-- Brazil dot (São Gonçalo area) -->
+            <circle cx="110" cy="185" r="6" fill="#1db954" opacity="0.9" filter="url(#glow-filter)"/>
+            <circle cx="110" cy="185" r="14" fill="#1db954" opacity="0.2" class="map-pulse-br"/>
+            <circle cx="110" cy="185" r="22" fill="#1db954" opacity="0.08" class="map-pulse-br map-pulse-delay"/>
+            <text x="110" y="210" text-anchor="middle" fill="#fff" font-size="9" font-family="Inter" opacity="0.9">São Gonçalo</text>
+            <text x="110" y="220" text-anchor="middle" fill="#1db954" font-size="8" font-family="Inter" opacity="0.7">RJ · Brasil</text>
+
+            <!-- Portugal dot (Porto area) -->
+            <circle cx="218" cy="88" r="6" fill="#e91e8c" opacity="0.9" filter="url(#glow-filter)"/>
+            <circle cx="218" cy="88" r="14" fill="#e91e8c" opacity="0.2" class="map-pulse-pt"/>
+            <circle cx="218" cy="88" r="22" fill="#e91e8c" opacity="0.08" class="map-pulse-pt map-pulse-delay"/>
+            <text x="218" y="113" text-anchor="middle" fill="#fff" font-size="9" font-family="Inter" opacity="0.9">Porto</text>
+            <text x="218" y="123" text-anchor="middle" fill="#e91e8c" font-size="8" font-family="Inter" opacity="0.7">Portugal</text>
+
+            <!-- Curved line between them -->
+            <path d="M 110 185 Q 164 60 218 88"
+                  stroke="url(#lineGradient)"
+                  stroke-width="1.5"
+                  fill="none"
+                  stroke-dasharray="4 3"
+                  opacity="0.8"
+                  class="map-line"/>
+            <defs>
+              <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#1db954"/>
+                <stop offset="100%" stop-color="#e91e8c"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Heart at midpoint -->
+            <text x="164" y="108" text-anchor="middle" fill="#fff" font-size="14" class="map-heart">💚</text>
+          </svg>
+        </div>
+        <div class="map-cities-row">
+          <div class="map-city-badge map-city-green">
+            <span class="city-dot green"></span>
+            <div>
+              <strong>São Gonçalo</strong>
+              <span>RJ, Brasil 🇧🇷</span>
+            </div>
+          </div>
+          <div class="map-city-badge map-city-pink">
+            <span class="city-dot pink"></span>
+            <div>
+              <strong>Porto</strong>
+              <span>Portugal 🇵🇹</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 7: Linha do tempo (Polaroid) ─── -->
+    <div class="slide slide-timeline" data-slide="6">
+      <div class="slide-bg gradient-warm-dark"></div>
+      <div class="slide-content timeline-content">
+        <div class="slide-eyebrow">📷 Nossa linha do tempo</div>
+        <h2 class="slide-headline timeline-headline">Momentos que<br/><span class="text-accent-pink">ficaram.</span></h2>
+        <div class="polaroid-stack" id="polaroid-stack">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 8: Galeria ─── -->
+    <div class="slide slide-gallery" data-slide="7">
+      <div class="slide-bg gradient-gallery"></div>
+      <div class="slide-content gallery-content">
+        <div class="gallery-header">
+          <div class="slide-eyebrow" id="gallery-eyebrow">🖼 Nossa foto favorita</div>
+          <p class="gallery-desc" id="gallery-desc"></p>
+        </div>
+        <div class="gallery-main-photo">
+          <div class="gallery-photo-frame">
+            <img id="gallery-main-img" src="photos/gallery-1.jpg" alt="Nossa foto" onerror="this.style.display='none'" />
+            <div class="gallery-photo-placeholder" id="gallery-placeholder">
+              <span>📸</span>
+              <p>gallery-1.jpg</p>
+            </div>
+          </div>
+          <div class="gallery-photo-glow"></div>
+        </div>
+        <div class="gallery-thumbs" id="gallery-thumbs">
+          <!-- thumbnails populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 9: Quiz ─── -->
+    <div class="slide slide-quiz" data-slide="8">
+      <div class="slide-bg gradient-quiz"></div>
+      <div class="particles-container" id="particles-quiz"></div>
+      <div class="slide-content quiz-content">
+        <div class="slide-eyebrow">💭 Quiz</div>
+        <h2 class="slide-headline quiz-question" id="quiz-question">O que eu mais<br/>gosto em você?</h2>
+        <div class="quiz-options" id="quiz-options">
+          <!-- populated by JS -->
+        </div>
+        <div class="quiz-result hidden" id="quiz-result">
+          <div class="quiz-result-inner">
+            <div class="quiz-result-emoji">💚</div>
+            <p class="quiz-result-text" id="quiz-result-text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 10: Roleta ─── -->
+    <div class="slide slide-spinner" data-slide="9">
+      <div class="slide-bg gradient-spinner"></div>
+      <div class="slide-content spinner-content">
+        <div class="slide-eyebrow">🎡 Decisão do dia</div>
+        <h2 class="slide-headline spinner-title" id="spinner-title">O QUE VAMOS<br/><span class="text-accent-green">FAZER HOJE?</span></h2>
+        <div class="spinner-wrapper">
+          <div class="spinner-pointer">▼</div>
+          <canvas id="spinner-canvas" width="260" height="260"></canvas>
+        </div>
+        <button class="spinner-btn" id="spinner-btn">Girar a roleta 🎲</button>
+        <div class="spinner-result hidden" id="spinner-result">
+          <span id="spinner-result-text"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 11: Contagem regressiva ─── -->
+    <div class="slide slide-countdown" data-slide="10">
+      <div class="slide-bg gradient-countdown"></div>
+      <div class="particles-container" id="particles-countdown"></div>
+      <div class="slide-content centered">
+        <div class="slide-eyebrow">📅 Contagem regressiva</div>
+        <h2 class="slide-headline countdown-headline">Falta pouco<br/>para <span class="text-accent-pink" id="countdown-date-label">10/04</span></h2>
+        <div class="countdown-grid" id="countdown-grid">
+          <div class="countdown-cell">
+            <span class="countdown-value" id="cd-days">0</span>
+            <span class="countdown-label">dias</span>
+          </div>
+          <div class="countdown-cell">
+            <span class="countdown-value" id="cd-hours">0</span>
+            <span class="countdown-label">horas</span>
+          </div>
+          <div class="countdown-cell">
+            <span class="countdown-value" id="cd-minutes">0</span>
+            <span class="countdown-label">min</span>
+          </div>
+          <div class="countdown-cell">
+            <span class="countdown-value" id="cd-seconds">0</span>
+            <span class="countdown-label">seg</span>
+          </div>
+        </div>
+        <p class="countdown-sub" id="countdown-sub"></p>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 12: Trilha sonora ─── -->
+    <div class="slide slide-music" data-slide="11">
+      <div class="slide-bg gradient-music"></div>
+      <div class="slide-content music-content">
+        <div class="slide-eyebrow">🎵 Nossa trilha sonora</div>
+        <div class="music-album-wrap">
+          <div class="music-album-art">
+            <img src="photos/album-cover.jpg" alt="Capa" onerror="this.style.display='none'" />
+            <div class="music-album-placeholder">🎵</div>
+            <div class="music-album-bars">
+              <span class="bar b1"></span>
+              <span class="bar b2"></span>
+              <span class="bar b3"></span>
+              <span class="bar b4"></span>
+              <span class="bar b5"></span>
+            </div>
+          </div>
+          <div class="music-album-glow"></div>
+        </div>
+        <div class="music-now-playing">
+          <div class="music-badge">▶ A tocar agora</div>
+          <h3 class="music-song-title" id="music-song-title">borboletas</h3>
+          <p class="music-song-subtitle" id="music-song-subtitle">mais do que os olhos podem aguentar</p>
+          <p class="music-artist" id="music-artist">miseryswin</p>
+        </div>
+        <p class="music-note" id="music-note"></p>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE FINAL ─── -->
+    <div class="slide slide-final" data-slide="12">
+      <div class="slide-bg gradient-final"></div>
+      <canvas id="final-canvas" class="final-canvas"></canvas>
+      <div class="slide-content final-content">
+        <div class="final-star-burst">✨</div>
+        <div class="final-names" id="final-names">
+          <span class="final-name-1" id="final-name-1">Seu nome</span>
+          <span class="final-amp">&</span>
+          <span class="final-name-2" id="final-name-2">Giovana</span>
+        </div>
+        <h1 class="final-headline" id="final-headline">2026</h1>
+        <p class="final-message" id="final-message"></p>
+        <div class="final-badges">
+          <div class="final-badge">💚 Namorada do Ano</div>
+          <div class="final-badge">🌊 Amor à Distância</div>
+          <div class="final-badge">✨ Infinito</div>
+        </div>
+        <p class="final-signature">— feito com 💚 só pra você</p>
+      </div>
+    </div>
+
+  </div><!-- /wrapped-container -->
+
+  <!-- ══════════════════════════════════════════
+       VINIL (reprodutor global)
+  ══════════════════════════════════════════ -->
+  <div class="vinyl-player" id="vinyl-player">
+    <div class="vinyl-disc" id="vinyl-disc">
+      <div class="vinyl-grooves"></div>
+      <div class="vinyl-label">
+        <span class="vinyl-note">🎵</span>
+      </div>
+      <div class="vinyl-shine"></div>
+    </div>
+    <div class="vinyl-needle" id="vinyl-needle"></div>
+    <audio id="audio-player" loop>
+      <source src="music/borboletas.mp3" type="audio/mpeg" />
+    </audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
