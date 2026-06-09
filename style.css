@@ -2079,543 +2079,54 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   text-shadow: 0 0 14px rgba(255,77,184,0.45);
 }
 
-
-/* RELÓGIO DE BOLSO PREMIUM — SLIDE CONTADOR */
-
-.pocket-watch-scene {
-  position: absolute;
-  top: 34px;
-  left: 50%;
-  z-index: 16;
-  width: 125px;
-  height: 300px;
-  pointer-events: none;
-  transform: translateX(-50%);
-  transform-origin: top center;
-  animation: premiumWatchSwing 5.2s ease-in-out infinite;
-}
-
-.gold-chain {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 5px;
-  height: 135px;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #5b2c08 0px,
-    #f9d070 4px,
-    #b97823 8px,
-    #3b1904 12px
-  );
-  box-shadow:
-    0 0 10px rgba(255, 202, 95, 0.42),
-    inset 0 0 6px rgba(60, 25, 5, 0.55);
-}
-
-.gold-chain::before,
-.gold-chain::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 18px;
-  height: 12px;
-  border: 3px solid rgba(245, 190, 88, 0.75);
-  border-radius: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 0 6px rgba(255, 206, 120, 0.32);
-}
-
-.gold-chain::before {
-  top: 18px;
-}
-
-.gold-chain::after {
-  top: 54px;
-}
-
-.pocket-watch-pro {
-  position: absolute;
-  top: 126px;
-  left: 50%;
-  width: 118px;
-  height: 118px;
-  transform: translateX(-50%);
-}
-
-.watch-ring {
-  position: absolute;
-  top: -18px;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  border: 6px solid #d79b34;
-  border-radius: 50%;
-  transform: translateX(-50%);
-  background: transparent;
-  box-shadow:
-    inset 0 0 8px rgba(255, 230, 150, 0.3),
-    0 0 10px rgba(255, 200, 90, 0.35);
-}
-
-.watch-crown {
-  position: absolute;
-  top: -29px;
-  left: 50%;
-  width: 26px;
-  height: 17px;
-  border-radius: 10px 10px 5px 5px;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #fff0a8, #c47b22 55%, #6a3109);
-  box-shadow: 0 0 10px rgba(255, 210, 120, 0.28);
-}
-
-.watch-outer {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 32% 24%, rgba(255,255,255,0.55), transparent 16%),
-    radial-gradient(circle at 50% 50%, #f8c867 0%, #c78327 42%, #69300a 78%, #2b1103 100%);
-  box-shadow:
-    0 0 0 5px #b56c1d,
-    0 0 0 8px rgba(255, 214, 125, 0.28),
-    0 0 30px rgba(255, 183, 75, 0.42),
-    0 18px 35px rgba(0,0,0,0.48),
-    inset 0 0 20px rgba(255, 240, 180, 0.28),
-    inset -14px -18px 24px rgba(35, 12, 2, 0.5);
-}
-
-.watch-inner {
-  position: absolute;
-  inset: 14px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #fffdf0, #f5dfad 60%, #d8b36f 100%);
-  border: 3px solid #4d2107;
-  box-shadow:
-    inset 0 0 14px rgba(90, 45, 10, 0.32),
-    0 0 12px rgba(255, 230, 170, 0.18);
-}
-
-.watch-glass {
-  position: absolute;
-  inset: 7px;
-  border-radius: 50%;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.32), transparent 35%),
-    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.28), transparent 18%);
-  pointer-events: none;
-}
-
-.watch-numeral {
-  position: absolute;
-  color: #3a1704;
-  font-family: Georgia, serif;
-  font-weight: 900;
-  font-size: 11px;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.35);
-}
-
-.n12 {
-  top: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.n3 {
-  right: 7px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.n6 {
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.n9 {
-  left: 7px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.tick {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 2px;
-  height: 7px;
-  background: rgba(65, 28, 7, 0.72);
-  border-radius: 999px;
-  transform-origin: center -31px;
-}
-
-.t1 { transform: rotate(30deg) translateY(-31px); }
-.t2 { transform: rotate(60deg) translateY(-31px); }
-.t3 { transform: rotate(120deg) translateY(-31px); }
-.t4 { transform: rotate(150deg) translateY(-31px); }
-.t5 { transform: rotate(210deg) translateY(-31px); }
-.t6 { transform: rotate(240deg) translateY(-31px); }
-.t7 { transform: rotate(300deg) translateY(-31px); }
-.t8 { transform: rotate(330deg) translateY(-31px); }
-
-.watch-hand-pro {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  border-radius: 999px;
-  transform-origin: bottom center;
-  box-shadow: 0 0 4px rgba(0,0,0,0.25);
-}
-
-.watch-hand-pro.hour {
-  width: 4px;
-  height: 23px;
-  background: #3a1704;
-  transform: translate(-50%, -100%) rotate(310deg);
-}
-
-.watch-hand-pro.minute {
-  width: 3px;
-  height: 32px;
-  background: #3a1704;
-  transform: translate(-50%, -100%) rotate(58deg);
-}
-
-.watch-hand-pro.second {
-  width: 1.5px;
-  height: 35px;
-  background: #d94b3d;
-  transform: translate(-50%, -100%) rotate(18deg);
-  animation: secondHandTick 6s steps(12) infinite;
-}
-
-.watch-pin {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, #fff2ac, #a85d14);
-  box-shadow: 0 0 6px rgba(255, 206, 105, 0.7);
-}
-
-@keyframes secondHandTick {
-  from {
-    transform: translate(-50%, -100%) rotate(18deg);
-  }
-  to {
-    transform: translate(-50%, -100%) rotate(378deg);
-  }
-}
-
-@keyframes premiumWatchSwing {
-  0%, 100% {
-    transform: translateX(-50%) rotate(-8deg);
-  }
-
-  50% {
-    transform: translateX(-50%) rotate(8deg);
-  }
-}
-
-/* CORREÇÃO FINAL — FUNDO + RELÓGIO MAIS BAIXO */
-
-.timer-room-bg {
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,0.18),
-      rgba(0,0,0,0.38)
-    ),
-    url("giovana-wrapped/timer-room.png") !important;
-
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-}
-
-.pocket-watch-scene {
-  top: 405px !important;
-  left: 50% !important;
-  width: 110px !important;
-  height: 220px !important;
-  z-index: 22 !important;
-}
-
-.gold-chain {
-  height: 62px !important;
-  width: 4px !important;
-}
-
-.pocket-watch-pro {
-  top: 58px !important;
-  width: 104px !important;
-  height: 104px !important;
-}
-
-/* AJUSTE DEFINITIVO — RELÓGIO EMBAIXO DO CONTADOR */
+/* RELÓGIO DE BOLSO — VERSÃO FINAL LIMPA */
 
 .slide-timer .pocket-watch-scene {
   position: absolute !important;
-  top: auto !important;
-  bottom: 110px !important;
   left: 50% !important;
-
-  width: 103px !important;
-  height: 175px !important;
-
-  z-index: 25 !important;
-  pointer-events: none !important;
-
-  transform-origin: top center !important;
-  animation: premiumWatchSwing 5.2s ease-in-out infinite !important;
-}
-
-.slide-timer .gold-chain {
-  height: 48px !important;
-  width: 4px !important;
-}
-
-.slide-timer .pocket-watch-pro {
-  top: 45px !important;
-  width: 98px !important;
-  height: 98px !important;
-}
-
-@keyframes premiumWatchSwing {
-  0%, 100% {
-    transform: translateX(-50%) rotate(-7deg);
-  }
-
-  50% {
-    transform: translateX(-50%) rotate(7deg);
-  }
-}
-
-/* AJUSTE — CORRENTE VISÍVEL + MOVIMENTO MAIOR */
-
-.slide-timer .pocket-watch-scene {
-  bottom: 80px !important;
-  width: 120px !important;
-  height: 230px !important;
-  z-index: 28 !important;
-
-  animation: pocketTravelWide 3.8s ease-in-out infinite !important;
-}
-
-.slide-timer .gold-chain {
-  display: block !important;
-  opacity: 1 !important;
-
-  height: 78px !important;
-  width: 5px !important;
-
-  background: repeating-linear-gradient(
-    to bottom,
-    #5b2c08 0px,
-    #ffd36f 5px,
-    #b97823 10px,
-    #3b1904 15px
-  ) !important;
-
-  box-shadow:
-    0 0 14px rgba(255, 210, 110, 0.75),
-    inset 0 0 8px rgba(60, 25, 5, 0.65) !important;
-}
-
-.slide-timer .pocket-watch-pro {
-  top: 74px !important;
-}
-
-@keyframes pocketTravelWide {
-  0% {
-    transform: translateX(calc(-50vw + 70px)) rotate(-13deg);
-  }
-
-  50% {
-    transform: translateX(calc(50vw - 70px)) rotate(13deg);
-  }
-
-  100% {
-    transform: translateX(calc(-50vw + 70px)) rotate(-13deg);
-  }
-}
-
-/* ==============================
-   RELÓGIO FINAL — PÊNDULO REAL
-============================== */
-
-.slide-timer .pocket-watch-scene {
-  position: absolute !important;
-
-  left: 50% !important;
-  top: 47% !important;
-  bottom: auto !important;
+  top: 42% !important;
 
   width: 120px !important;
   height: 210px !important;
 
-  z-index: 28 !important;
+  z-index: 30 !important;
   pointer-events: none !important;
 
-  transform-origin: 50% 0% !important;
-  animation: pocketPendulumReal 4s ease-in-out infinite !important;
+  transform-origin: 50% -360px !important;
+  animation: pocketPendulumSmooth 4s linear infinite !important;
 }
 
 .slide-timer .gold-chain {
-  display: block !important;
-  opacity: 1 !important;
-
   position: absolute !important;
-  top: 0 !important;
   left: 50% !important;
+  top: -420px !important;
 
-  width: 6px !important;
-  height: 78px !important;
+  width: 7px !important;
+  height: 500px !important;
 
   transform: translateX(-50%) !important;
-  border-radius: 999px !important;
 
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  border-radius: 999px !important;
   background: repeating-linear-gradient(
     to bottom,
-    #5b2c08 0px,
-    #ffd36f 5px,
+    #4a2207 0px,
+    #f9d170 5px,
     #b97823 10px,
     #3b1904 15px
   ) !important;
 
   box-shadow:
-    0 0 14px rgba(255, 210, 110, 0.75),
-    inset 0 0 8px rgba(60, 25, 5, 0.65) !important;
+    0 0 10px rgba(255,210,110,0.75),
+    inset 0 0 6px rgba(60,25,5,0.7) !important;
 }
 
 .slide-timer .gold-chain::before,
 .slide-timer .gold-chain::after {
   content: "" !important;
-  display: block !important;
-  opacity: 1 !important;
-
-  position: absolute !important;
-  left: 50% !important;
-
-  width: 18px !important;
-  height: 12px !important;
-
-  border: 3px solid rgba(245, 190, 88, 0.8) !important;
-  border-radius: 50% !important;
-
-  transform: translateX(-50%) !important;
-
-  box-shadow: 0 0 7px rgba(255, 206, 120, 0.45) !important;
-}
-
-.slide-timer .gold-chain::before {
-  top: 16px !important;
-}
-
-.slide-timer .gold-chain::after {
-  top: 48px !important;
-}
-
-.slide-timer .pocket-watch-pro {
-  position: absolute !important;
-
-  top: 74px !important;
-  left: 50% !important;
-
-  width: 106px !important;
-  height: 106px !important;
-
-  transform: translateX(-50%) !important;
-}
-
-@keyframes pocketPendulumReal {
-  0% {
-    transform:
-      translateX(-50%)
-      translateX(-31vw)
-      translateY(-18px)
-      rotate(18deg);
-  }
-
-  25% {
-    transform:
-      translateX(-50%)
-      translateX(-15vw)
-      translateY(8px)
-      rotate(9deg);
-  }
-
-  50% {
-    transform:
-      translateX(-50%)
-      translateX(31vw)
-      translateY(-18px)
-      rotate(-18deg);
-  }
-
-  75% {
-    transform:
-      translateX(-50%)
-      translateX(15vw)
-      translateY(8px)
-      rotate(-9deg);
-  }
-
-  100% {
-    transform:
-      translateX(-50%)
-      translateX(-31vw)
-      translateY(-18px)
-      rotate(18deg);
-  }
-}
-
-/* CORRENTE VISÍVEL DO RELÓGIO */
-
-.slide-timer .gold-chain {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-
-  position: absolute !important;
-  top: 0 !important;
-  left: 50% !important;
-
-  width: 8px !important;
-  height: 95px !important;
-
-  transform: translateX(-50%) !important;
-  z-index: 40 !important;
-
-  border-radius: 999px !important;
-
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      #3b1a05 0px,
-      #ffd36f 4px,
-      #c9872a 8px,
-      #5b2c08 12px
-    ) !important;
-
-  box-shadow:
-    0 0 10px rgba(255, 210, 110, 0.9),
-    inset 0 0 6px rgba(60, 25, 5, 0.8) !important;
-}
-
-.slide-timer .gold-chain::before,
-.slide-timer .gold-chain::after {
-  content: "" !important;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-
   position: absolute !important;
   left: 50% !important;
 
@@ -2626,95 +2137,62 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   border-radius: 50% !important;
 
   transform: translateX(-50%) !important;
-  z-index: 41 !important;
 }
 
 .slide-timer .gold-chain::before {
-  top: 18px !important;
+  top: 120px !important;
 }
 
 .slide-timer .gold-chain::after {
-  top: 55px !important;
+  top: 280px !important;
 }
 
 .slide-timer .pocket-watch-pro {
-  z-index: 42 !important;
-}
-
-/* CORRENTE BONITA + PÊNDULO FLUIDO */
-
-.slide-timer .pocket-watch-scene {
-  top: 42% !important;
-  transform-origin: 50% -360px !important;
-  animation: pocketPendulumSmooth 5s linear infinite !important;
-}
-
-.slide-timer .gold-chain {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-
   position: absolute !important;
+  top: 74px !important;
   left: 50% !important;
-  top: -420px !important;
 
-  width: 7px !important;
-  height: 500px !important;
+  width: 106px !important;
+  height: 106px !important;
 
   transform: translateX(-50%) !important;
-  z-index: 999 !important;
-
-  border-radius: 999px !important;
-  border: none !important;
-
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      #4a2207 0px,
-      #f9d170 5px,
-      #b97823 10px,
-      #3b1904 15px
-    ) !important;
-
-  box-shadow:
-    0 0 10px rgba(255,210,110,0.75),
-    inset 0 0 6px rgba(60,25,5,0.7) !important;
-}
-
-.slide-timer .pocket-watch-pro {
-  z-index: 1000 !important;
+  z-index: 40 !important;
 }
 
 @keyframes pocketPendulumSmooth {
   0% {
-    transform:
-      translateX(-50%)
-      translateX(-34vw)
-      translateY(-26px)
-      rotate(18deg);
+    transform: translateX(-50%) translateX(-34vw) translateY(-35px) rotate(18deg);
+  }
+
+  12.5% {
+    transform: translateX(-50%) translateX(-17vw) translateY(-5px) rotate(9deg);
+  }
+
+  25% {
+    transform: translateX(-50%) translateX(0) translateY(24px) rotate(0deg);
+  }
+
+  37.5% {
+    transform: translateX(-50%) translateX(17vw) translateY(-5px) rotate(-9deg);
   }
 
   50% {
-    transform:
-      translateX(-50%)
-      translateX(34vw)
-      translateY(-26px)
-      rotate(-18deg);
+    transform: translateX(-50%) translateX(34vw) translateY(-35px) rotate(-18deg);
   }
 
-  25%, 75% {
-    transform:
-      translateX(-50%)
-      translateX(0)
-      translateY(30px)
-      rotate(0deg);
+  62.5% {
+    transform: translateX(-50%) translateX(17vw) translateY(-5px) rotate(-9deg);
+  }
+
+  75% {
+    transform: translateX(-50%) translateX(0) translateY(24px) rotate(0deg);
+  }
+
+  87.5% {
+    transform: translateX(-50%) translateX(-17vw) translateY(-5px) rotate(9deg);
   }
 
   100% {
-    transform:
-      translateX(-50%)
-      translateX(-34vw)
-      translateY(-26px)
-      rotate(18deg);
+    transform: translateX(-50%) translateX(-34vw) translateY(-35px) rotate(18deg);
   }
 }
