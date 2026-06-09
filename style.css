@@ -2445,3 +2445,105 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
     transform: translateX(calc(-50vw + 70px)) rotate(-13deg);
   }
 }
+
+/* ==============================
+   RELÓGIO FINAL — PÊNDULO REAL
+============================== */
+
+.slide-timer .pocket-watch-scene {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 47% !important;
+  bottom: auto !important;
+
+  width: 120px !important;
+  height: 210px !important;
+
+  z-index: 28 !important;
+  pointer-events: none !important;
+
+  transform-origin: 50% 0% !important;
+  animation: pocketPendulumReal 2.8s ease-in-out infinite !important;
+}
+
+.slide-timer .gold-chain {
+  display: block !important;
+  opacity: 1 !important;
+
+  position: absolute !important;
+  top: 0 !important;
+  left: 50% !important;
+
+  width: 6px !important;
+  height: 78px !important;
+
+  transform: translateX(-50%) !important;
+  border-radius: 999px !important;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    #5b2c08 0px,
+    #ffd36f 5px,
+    #b97823 10px,
+    #3b1904 15px
+  ) !important;
+
+  box-shadow:
+    0 0 14px rgba(255, 210, 110, 0.75),
+    inset 0 0 8px rgba(60, 25, 5, 0.65) !important;
+}
+
+.slide-timer .gold-chain::before,
+.slide-timer .gold-chain::after {
+  content: "" !important;
+  display: block !important;
+  opacity: 1 !important;
+
+  position: absolute !important;
+  left: 50% !important;
+
+  width: 18px !important;
+  height: 12px !important;
+
+  border: 3px solid rgba(245, 190, 88, 0.8) !important;
+  border-radius: 50% !important;
+
+  transform: translateX(-50%) !important;
+
+  box-shadow: 0 0 7px rgba(255, 206, 120, 0.45) !important;
+}
+
+.slide-timer .gold-chain::before {
+  top: 16px !important;
+}
+
+.slide-timer .gold-chain::after {
+  top: 48px !important;
+}
+
+.slide-timer .pocket-watch-pro {
+  position: absolute !important;
+
+  top: 74px !important;
+  left: 50% !important;
+
+  width: 106px !important;
+  height: 106px !important;
+
+  transform: translateX(-50%) !important;
+}
+
+@keyframes pocketPendulumReal {
+  0% {
+    transform: translateX(-50%) translateX(-31vw) rotate(18deg);
+  }
+
+  50% {
+    transform: translateX(-50%) translateX(31vw) rotate(-18deg);
+  }
+
+  100% {
+    transform: translateX(-50%) translateX(-31vw) rotate(18deg);
+  }
+}
