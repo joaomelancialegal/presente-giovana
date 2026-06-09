@@ -2312,3 +2312,62 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   background: radial-gradient(circle, #fff2ac, #a85d14) !important;
   z-index: 60 !important;
 }
+
+/* PARTÍCULAS DOURADAS — SALA DOS RELÓGIOS */
+
+.timer-dust {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.timer-dust span {
+  position: absolute;
+  bottom: -20px;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+  background: rgba(255, 210, 120, 0.75);
+
+  box-shadow:
+    0 0 8px rgba(255, 210, 120, 0.8),
+    0 0 18px rgba(255, 160, 70, 0.35);
+
+  animation: timerDustFloat 9s linear infinite;
+}
+
+.timer-dust span:nth-child(1) { left: 8%;  animation-delay: 0s;   animation-duration: 8s; }
+.timer-dust span:nth-child(2) { left: 18%; animation-delay: 2s;   animation-duration: 10s; }
+.timer-dust span:nth-child(3) { left: 27%; animation-delay: 1s;   animation-duration: 9s; }
+.timer-dust span:nth-child(4) { left: 39%; animation-delay: 3s;   animation-duration: 12s; }
+.timer-dust span:nth-child(5) { left: 48%; animation-delay: 0.5s; animation-duration: 8.5s; }
+.timer-dust span:nth-child(6) { left: 59%; animation-delay: 2.5s; animation-duration: 11s; }
+.timer-dust span:nth-child(7) { left: 70%; animation-delay: 1.5s; animation-duration: 9.5s; }
+.timer-dust span:nth-child(8) { left: 82%; animation-delay: 4s;   animation-duration: 13s; }
+.timer-dust span:nth-child(9) { left: 91%; animation-delay: 2s;   animation-duration: 10.5s; }
+.timer-dust span:nth-child(10){ left: 35%; animation-delay: 5s;   animation-duration: 14s; }
+
+@keyframes timerDustFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.6);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: translateY(-48vh) translateX(18px) scale(1);
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: translateY(-105vh) translateX(-24px) scale(0.4);
+    opacity: 0;
+  }
+}
