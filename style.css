@@ -2079,16 +2079,18 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   text-shadow: 0 0 14px rgba(255,77,184,0.45);
 }
 
+
 /* RELÓGIO DE BOLSO PREMIUM — SLIDE CONTADOR */
 
 .pocket-watch-scene {
   position: absolute;
-  top: -12px;
+  top: 34px;
   left: 50%;
-  z-index: 18;
-  width: 190px;
-  height: 360px;
+  z-index: 16;
+  width: 125px;
+  height: 300px;
   pointer-events: none;
+  transform: translateX(-50%);
   transform-origin: top center;
   animation: premiumWatchSwing 5.2s ease-in-out infinite;
 }
@@ -2097,21 +2099,20 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   position: absolute;
   top: 0;
   left: 50%;
-  width: 12px;
-  height: 178px;
+  width: 5px;
+  height: 135px;
   transform: translateX(-50%);
   border-radius: 999px;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      #5b2c08 0px,
-      #f9d070 4px,
-      #b97823 8px,
-      #3b1904 12px
-    );
+  background: repeating-linear-gradient(
+    to bottom,
+    #5b2c08 0px,
+    #f9d070 4px,
+    #b97823 8px,
+    #3b1904 12px
+  );
   box-shadow:
-    0 0 12px rgba(255, 202, 95, 0.5),
-    inset 0 0 8px rgba(60, 25, 5, 0.55);
+    0 0 10px rgba(255, 202, 95, 0.42),
+    inset 0 0 6px rgba(60, 25, 5, 0.55);
 }
 
 .gold-chain::before,
@@ -2119,12 +2120,12 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   content: "";
   position: absolute;
   left: 50%;
-  width: 28px;
-  height: 18px;
-  border: 4px solid rgba(245, 190, 88, 0.85);
+  width: 18px;
+  height: 12px;
+  border: 3px solid rgba(245, 190, 88, 0.75);
   border-radius: 50%;
   transform: translateX(-50%);
-  box-shadow: 0 0 8px rgba(255, 206, 120, 0.4);
+  box-shadow: 0 0 6px rgba(255, 206, 120, 0.32);
 }
 
 .gold-chain::before {
@@ -2132,43 +2133,43 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 }
 
 .gold-chain::after {
-  top: 58px;
+  top: 54px;
 }
 
 .pocket-watch-pro {
   position: absolute;
-  top: 155px;
+  top: 126px;
   left: 50%;
-  width: 172px;
-  height: 172px;
+  width: 118px;
+  height: 118px;
   transform: translateX(-50%);
 }
 
 .watch-ring {
   position: absolute;
-  top: -22px;
+  top: -18px;
   left: 50%;
-  width: 42px;
-  height: 42px;
-  border: 8px solid #d79b34;
+  width: 30px;
+  height: 30px;
+  border: 6px solid #d79b34;
   border-radius: 50%;
   transform: translateX(-50%);
   background: transparent;
   box-shadow:
-    inset 0 0 10px rgba(255, 230, 150, 0.35),
-    0 0 14px rgba(255, 200, 90, 0.45);
+    inset 0 0 8px rgba(255, 230, 150, 0.3),
+    0 0 10px rgba(255, 200, 90, 0.35);
 }
 
 .watch-crown {
   position: absolute;
-  top: -36px;
+  top: -29px;
   left: 50%;
-  width: 34px;
-  height: 22px;
-  border-radius: 12px 12px 6px 6px;
+  width: 26px;
+  height: 17px;
+  border-radius: 10px 10px 5px 5px;
   transform: translateX(-50%);
   background: linear-gradient(135deg, #fff0a8, #c47b22 55%, #6a3109);
-  box-shadow: 0 0 12px rgba(255, 210, 120, 0.35);
+  box-shadow: 0 0 10px rgba(255, 210, 120, 0.28);
 }
 
 .watch-outer {
@@ -2179,33 +2180,32 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
     radial-gradient(circle at 32% 24%, rgba(255,255,255,0.55), transparent 16%),
     radial-gradient(circle at 50% 50%, #f8c867 0%, #c78327 42%, #69300a 78%, #2b1103 100%);
   box-shadow:
-    0 0 0 7px #b56c1d,
-    0 0 0 11px rgba(255, 214, 125, 0.35),
-    0 0 38px rgba(255, 183, 75, 0.48),
-    0 20px 45px rgba(0,0,0,0.55),
-    inset 0 0 24px rgba(255, 240, 180, 0.35),
-    inset -18px -22px 30px rgba(35, 12, 2, 0.55);
+    0 0 0 5px #b56c1d,
+    0 0 0 8px rgba(255, 214, 125, 0.28),
+    0 0 30px rgba(255, 183, 75, 0.42),
+    0 18px 35px rgba(0,0,0,0.48),
+    inset 0 0 20px rgba(255, 240, 180, 0.28),
+    inset -14px -18px 24px rgba(35, 12, 2, 0.5);
 }
 
 .watch-inner {
   position: absolute;
-  inset: 19px;
+  inset: 14px;
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 35% 30%, #fffdf0, #f5dfad 60%, #d8b36f 100%);
-  border: 4px solid #4d2107;
+  background: radial-gradient(circle at 35% 30%, #fffdf0, #f5dfad 60%, #d8b36f 100%);
+  border: 3px solid #4d2107;
   box-shadow:
-    inset 0 0 18px rgba(90, 45, 10, 0.35),
-    0 0 16px rgba(255, 230, 170, 0.22);
+    inset 0 0 14px rgba(90, 45, 10, 0.32),
+    0 0 12px rgba(255, 230, 170, 0.18);
 }
 
 .watch-glass {
   position: absolute;
-  inset: 8px;
+  inset: 7px;
   border-radius: 50%;
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.38), transparent 35%),
-    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.35), transparent 18%);
+    linear-gradient(135deg, rgba(255,255,255,0.32), transparent 35%),
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.28), transparent 18%);
   pointer-events: none;
 }
 
@@ -2214,30 +2214,30 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   color: #3a1704;
   font-family: Georgia, serif;
   font-weight: 900;
-  font-size: 15px;
+  font-size: 11px;
   text-shadow: 0 1px 0 rgba(255,255,255,0.35);
 }
 
 .n12 {
-  top: 7px;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .n3 {
-  right: 9px;
+  right: 7px;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .n6 {
-  bottom: 6px;
+  bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .n9 {
-  left: 9px;
+  left: 7px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -2246,21 +2246,21 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 3px;
-  height: 10px;
-  background: rgba(65, 28, 7, 0.75);
+  width: 2px;
+  height: 7px;
+  background: rgba(65, 28, 7, 0.72);
   border-radius: 999px;
-  transform-origin: center -45px;
+  transform-origin: center -31px;
 }
 
-.t1 { transform: rotate(30deg) translateY(-45px); }
-.t2 { transform: rotate(60deg) translateY(-45px); }
-.t3 { transform: rotate(120deg) translateY(-45px); }
-.t4 { transform: rotate(150deg) translateY(-45px); }
-.t5 { transform: rotate(210deg) translateY(-45px); }
-.t6 { transform: rotate(240deg) translateY(-45px); }
-.t7 { transform: rotate(300deg) translateY(-45px); }
-.t8 { transform: rotate(330deg) translateY(-45px); }
+.t1 { transform: rotate(30deg) translateY(-31px); }
+.t2 { transform: rotate(60deg) translateY(-31px); }
+.t3 { transform: rotate(120deg) translateY(-31px); }
+.t4 { transform: rotate(150deg) translateY(-31px); }
+.t5 { transform: rotate(210deg) translateY(-31px); }
+.t6 { transform: rotate(240deg) translateY(-31px); }
+.t7 { transform: rotate(300deg) translateY(-31px); }
+.t8 { transform: rotate(330deg) translateY(-31px); }
 
 .watch-hand-pro {
   position: absolute;
@@ -2268,26 +2268,26 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   top: 50%;
   border-radius: 999px;
   transform-origin: bottom center;
-  box-shadow: 0 0 5px rgba(0,0,0,0.25);
+  box-shadow: 0 0 4px rgba(0,0,0,0.25);
 }
 
 .watch-hand-pro.hour {
-  width: 6px;
-  height: 33px;
+  width: 4px;
+  height: 23px;
   background: #3a1704;
   transform: translate(-50%, -100%) rotate(310deg);
 }
 
 .watch-hand-pro.minute {
-  width: 4px;
-  height: 47px;
+  width: 3px;
+  height: 32px;
   background: #3a1704;
   transform: translate(-50%, -100%) rotate(58deg);
 }
 
 .watch-hand-pro.second {
-  width: 2px;
-  height: 50px;
+  width: 1.5px;
+  height: 35px;
   background: #d94b3d;
   transform: translate(-50%, -100%) rotate(18deg);
   animation: secondHandTick 6s steps(12) infinite;
@@ -2297,12 +2297,12 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 13px;
-  height: 13px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   background: radial-gradient(circle, #fff2ac, #a85d14);
-  box-shadow: 0 0 8px rgba(255, 206, 105, 0.75);
+  box-shadow: 0 0 6px rgba(255, 206, 105, 0.7);
 }
 
 @keyframes secondHandTick {
@@ -2316,9 +2316,10 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 
 @keyframes premiumWatchSwing {
   0%, 100% {
-    transform: translateX(-50%) rotate(-9deg);
+    transform: translateX(-50%) rotate(-8deg);
   }
+
   50% {
-    transform: translateX(-50%) rotate(9deg);
+    transform: translateX(-50%) rotate(8deg);
   }
 }
