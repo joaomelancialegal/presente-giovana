@@ -2641,7 +2641,13 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   z-index: 42 !important;
 }
 
-/* TESTE FORTE — CORRENTE VISÍVEL */
+/* CORRENTE BONITA + PÊNDULO FLUIDO */
+
+.slide-timer .pocket-watch-scene {
+  top: 42% !important;
+  transform-origin: 50% -360px !important;
+  animation: pocketPendulumSmooth 3.4s cubic-bezier(.45,0,.55,1) infinite !important;
+}
 
 .slide-timer .gold-chain {
   display: block !important;
@@ -2649,24 +2655,66 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   visibility: visible !important;
 
   position: absolute !important;
-  top: -90px !important;
   left: 50% !important;
+  top: -420px !important;
 
-  width: 10px !important;
-  height: 170px !important;
+  width: 7px !important;
+  height: 500px !important;
 
   transform: translateX(-50%) !important;
   z-index: 999 !important;
 
-  background: #ffd36f !important;
-  border: 2px solid #5b2c08 !important;
   border-radius: 999px !important;
+  border: none !important;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #4a2207 0px,
+      #f9d170 5px,
+      #b97823 10px,
+      #3b1904 15px
+    ) !important;
 
   box-shadow:
-    0 0 20px rgba(255, 220, 120, 1),
-    inset 0 0 8px rgba(60, 25, 5, 0.8) !important;
+    0 0 10px rgba(255,210,110,0.75),
+    inset 0 0 6px rgba(60,25,5,0.7) !important;
 }
 
 .slide-timer .pocket-watch-pro {
   z-index: 1000 !important;
+}
+
+@keyframes pocketPendulumSmooth {
+  0% {
+    transform:
+      translateX(-50%)
+      translateX(-34vw)
+      translateY(-26px)
+      rotate(18deg);
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      translateX(34vw)
+      translateY(-26px)
+      rotate(-18deg);
+  }
+
+  25%, 75% {
+    transform:
+      translateX(-50%)
+      translateX(0)
+      translateY(30px)
+      rotate(0deg);
+  }
+
+  100% {
+    transform:
+      translateX(-50%)
+      translateX(-34vw)
+      translateY(-26px)
+      rotate(18deg);
+  }
 }
