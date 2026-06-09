@@ -18,14 +18,14 @@
 const CONFIG = {
 
   /* ── Nomes ── */
-  nomeEle:  'Filipe',    // seu nome
+  nomeEle:  'João',    // seu nome
   nomeDela: 'Giovana',  // nome dela
 
   /* ── Datas ── */
   dataConheceram: '2025-08-14',   // quando se conheceram
   dataNamero:     '2026-04-09',   // início do namoro (ISO format)
-  dataContagem:   '2027-04-10',   // contagem regressiva para esse dia (ex: 1 ano)
-  labelContagem:  '10/04/2027',   // como mostrar essa data na tela
+  dataContagem:   '2026-07-10',   // contagem regressiva para esse dia (ex: 1 ano)
+  labelContagem:  '10/07/2026',   // como mostrar essa data na tela
 
   /* ── Cidades ── */
   cidadeEle: 'São Gonçalo, RJ',
@@ -43,25 +43,20 @@ const CONFIG = {
 
   /* ── Abertura ── */
   abertura: {
-    titulo:    'Giovana Wrapped',
+    titulo:    'Nossa Retrospectiva',
     subtitulo: 'A nossa história, em modo Wrapped ✨',
-    label:     '🎁 Um presente especial para você',
+    label:     '🎁 Um presente especial para você, chata',
     badge:     'Novo · 2026',
   },
 
   /* ── Slide: Céu no pedido (dados editáveis) ── */
   ceuNoPedido: {
-    titulo: 'O universo testemunhou.',
-    nota: '✨ Dados calculados para Porto, 09/04/2026',
-    linhas: [
-      { label: '🌅 Nascer do Sol',    valor: '07h 02min' },
-      { label: '🌇 Pôr do Sol',       valor: '20h 21min' },
-      { label: '🌙 Fase da Lua',      valor: 'Lua Crescente' },
-      { label: '⭐ Estrela mais brilhante', valor: 'Sírius' },
-      { label: '🪐 Planeta visível',  valor: 'Vênus' },
-      { label: '🌡 Temperatura',      valor: '≈ 17°C' },
-    ],
+  titulo: 'O céu quando tudo começou',
+  signo: '♈ Áries',
+  descricao: 'Assim estavam as estrelas\nquando nossa história começou.',
+  local: 'Porto • 09/04/2026'
   },
+  
 
   /* ── Slide: Lua ── */
   lua: {
@@ -75,7 +70,7 @@ const CONFIG = {
     nome:        'Primavera',
     emoji:       '🌸',
     eyebrow:     '🌸 Primavera em Portugal',
-    sub:         'A estação das flores e dos novos começos.',
+    sub:         'A estação da sua arvore favorita: Sakura!',
     detalhe:     'Em Portugal, abril marca o coração da primavera. As amendoeiras florescem, o céu clareia e o ar cheira a recomeço. Foi exatamente nisso que você disse sim. 🌺',
     gradiente:   'linear-gradient(160deg, #1a000d 0%, #2d0020 40%, #1a0010 70%, #000 100%)',
     particulas:  '#ff69b4',
@@ -611,12 +606,24 @@ function applyMoonPhase(illumination) {
 function buildSkyInfoCard() {
   const card = $('#sky-info-card');
   if (!card) return;
-  card.innerHTML = CONFIG.ceuNoPedido.linhas.map(row => `
-    <div class="sky-row">
-      <span class="sky-row-label">${row.label}</span>
-      <span class="sky-row-value">${row.valor}</span>
+
+  card.innerHTML = `
+    <div class="sky-custom">
+      <h2>${CONFIG.ceuNoPedido.titulo}</h2>
+
+      <div class="sky-sign">
+        ${CONFIG.ceuNoPedido.signo}
+      </div>
+
+      <p>
+        ${CONFIG.ceuNoPedido.descricao.replace(/\n/g, '<br>')}
+      </p>
+
+      <small>
+        ${CONFIG.ceuNoPedido.local}
+      </small>
     </div>
-  `).join('');
+  `;
 }
 
 function initSkyCanvas() {
@@ -624,32 +631,42 @@ function initSkyCanvas() {
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  canvas.width  = window.innerWidth;
+  canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  // Draw starfield
   const stars = [];
   for (let i = 0; i < 200; i++) {
     stars.push({
-      x:    Math.random() * canvas.width,
-      y:    Math.random() * canvas.height * 0.7,
-      r:    Math.random() * 1.5 + 0.3,
-      a:    Math.random(),
-      da:   (Math.random() - 0.5) * 0.01,
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height * 0.7,
+      r: Math.random() * 1.5 + 0.3,
+      a: Math.random(),
+      da: (Math.random() - 0.5) * 0.01,
     });
   }
 
-  // Constellations — a few random lines
-  const constLines = [
-    [{x:0.1,y:0.1},{x:0.2,y:0.15},{x:0.25,y:0.08}],
-    [{x:0.6,y:0.05},{x:0.65,y:0.12},{x:0.7,y:0.07},{x:0.75,y:0.14}],
-    [{x:0.4,y:0.2},{x:0.45,y:0.15},{x:0.5,y:0.22},{x:0.48,y:0.28}],
+  const ariesPoints = [
+    { x: 0.25, y: 0.42 },
+    { x: 0.33, y: 0.35 },
+    { x: 0.38, y: 0.18 },
+    { x: 0.43, y: 0.30 },
+    { x: 0.62, y: 0.38 },
+    { x: 0.69, y: 0.37 },
+    { x: 0.72, y: 0.48 },
+    { x: 0.65, y: 0.45 },
+    { x: 0.58, y: 0.45 },
   ];
+
+  const ariesLines = [
+    [0,1], [1,2], [2,3], [3,4],
+    [4,5], [5,6], [6,7], [7,8], [8,0]
+  ];
+
+  const constellationStart = performance.now();
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Stars
     stars.forEach(s => {
       s.a += s.da;
       if (s.a > 1 || s.a < 0.2) s.da *= -1;
@@ -659,20 +676,60 @@ function initSkyCanvas() {
       ctx.fill();
     });
 
-    // Constellation lines
-    ctx.strokeStyle = 'rgba(255,255,200,0.1)';
-    ctx.lineWidth   = 0.8;
-    constLines.forEach(pts => {
+    const elapsed = performance.now() - constellationStart;
+    const lineDuration = 650;
+    const delayBetweenLines = 180;
+
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+
+    ariesLines.forEach((line, index) => {
+      const startTime = index * delayBetweenLines;
+      const progress = Math.min(Math.max((elapsed - startTime) / lineDuration, 0), 1);
+      if (progress <= 0) return;
+
+      const p1 = ariesPoints[line[0]];
+      const p2 = ariesPoints[line[1]];
+
+      const x1 = p1.x * canvas.width;
+      const y1 = p1.y * canvas.height * 0.65;
+      const x2 = p2.x * canvas.width;
+      const y2 = p2.y * canvas.height * 0.65;
+
+      const currentX = x1 + (x2 - x1) * progress;
+      const currentY = y1 + (y2 - y1) * progress;
+
       ctx.beginPath();
-      pts.forEach((p, i) => {
-        const px = p.x * canvas.width;
-        const py = p.y * canvas.height * 0.6;
-        i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
-      });
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(currentX, currentY);
+      ctx.strokeStyle = `rgba(255,255,255,${0.25 + progress * 0.65})`;
+      ctx.shadowColor = 'rgba(255,255,255,0.9)';
+      ctx.shadowBlur = 12;
       ctx.stroke();
     });
 
-    // Horizon glow
+    ctx.shadowBlur = 0;
+
+    ariesPoints.forEach((p, index) => {
+      const starAppearTime = index * delayBetweenLines;
+      const starProgress = Math.min(Math.max((elapsed - starAppearTime) / 500, 0), 1);
+      if (starProgress <= 0) return;
+
+      const x = p.x * canvas.width;
+      const y = p.y * canvas.height * 0.65;
+      const pulse = 1 + Math.sin(performance.now() / 300 + index) * 0.25;
+
+      ctx.beginPath();
+      ctx.arc(x, y, (3.2 + (index % 2)) * starProgress * pulse, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,255,255,${0.75 * starProgress})`;
+      ctx.shadowColor = 'rgba(255,255,255,1)';
+      ctx.shadowBlur = 18;
+      ctx.fill();
+    });
+
+    ctx.shadowBlur = 0;
+
     const grad = ctx.createLinearGradient(0, canvas.height * 0.55, 0, canvas.height);
     grad.addColorStop(0, 'rgba(0,0,0,0)');
     grad.addColorStop(1, 'rgba(0,5,30,0.8)');
@@ -684,9 +741,8 @@ function initSkyCanvas() {
 
   draw();
 
-  // Set sky note
   const noteEl = $('#sky-note');
-  if (noteEl) noteEl.textContent = CONFIG.ceuNoPedido.nota;
+  if (noteEl) noteEl.textContent = '';
 }
 
 /* ════════════════════════════════════════════════════════
