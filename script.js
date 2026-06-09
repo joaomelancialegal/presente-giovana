@@ -263,10 +263,7 @@ function applyConfig() {
   buildSkyInfoCard();
 
   // Timer date display
-  const dateStr = new Date(CONFIG.dataNamero).toLocaleDateString('pt-BR', {
-    day: '2-digit', month: '2-digit', year: 'numeric'
-  });
-  setText('timer-date-display', dateStr);
+  setText('timer-date-display', '09/04/2026');
 
   // Spinner title
   const spinnerTitleEl = $('#spinner-title');
