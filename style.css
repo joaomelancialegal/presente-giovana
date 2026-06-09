@@ -2909,3 +2909,198 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 .slide-map .map-heart {
   display: none;
 }
+
+/* ═══════════════════════════════════════
+   MINI MAPA CARTOON
+═══════════════════════════════════════ */
+
+.mini-world-map-card {
+  width: 100%;
+  max-width: 340px;
+  margin: 18px auto 14px;
+
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+
+  background:
+    radial-gradient(circle at 25% 70%, rgba(101,242,138,.15), transparent 25%),
+    radial-gradient(circle at 75% 25%, rgba(255,111,189,.18), transparent 25%),
+    linear-gradient(180deg,#13051d 0%,#06020d 100%);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.45),
+    0 0 30px rgba(255,111,189,.08);
+}
+
+.mini-world-map {
+  width: 100%;
+  display: block;
+}
+
+.continent {
+  stroke: rgba(255,255,255,.15);
+  stroke-width: 1.5;
+}
+
+.north-america {
+  fill: rgba(90,180,255,.20);
+}
+
+.south-america {
+  fill: rgba(101,242,138,.25);
+}
+
+.europe-africa {
+  fill: rgba(255,111,189,.25);
+}
+
+/* rota */
+
+.mini-route {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.route-back {
+  stroke: rgba(255,255,255,.18);
+  stroke-width: 8;
+}
+
+.route-front {
+  stroke: white;
+  stroke-width: 3;
+
+  stroke-dasharray: 6 10;
+
+  animation: routeFlow 2.5s linear infinite;
+}
+
+@keyframes routeFlow {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+/* avião */
+
+.mini-plane {
+  font-size: 18px;
+  fill: white;
+
+  animation: planeFloat 2s ease-in-out infinite;
+}
+
+@keyframes planeFloat {
+  0%,100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* pulsação dos pins */
+
+.pin-pulse-green,
+.pin-pulse-pink {
+  animation: pinPulse 2s infinite;
+}
+
+@keyframes pinPulse {
+
+  0% {
+    opacity: .7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .7;
+  }
+}
+
+/* labels */
+
+.mini-map-label {
+  fill: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mini-map-sub {
+  fill: #65f28a;
+  font-size: 10px;
+}
+
+.mini-map-sub.pink {
+  fill: #ff6fbd;
+}
+
+/* estrelas de fundo */
+
+.mini-map-stars::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(circle,#fff 1px,transparent 1px),
+    radial-gradient(circle,#fff 1px,transparent 1px),
+    radial-gradient(circle,#fff 1px,transparent 1px);
+
+  background-size:
+    90px 90px,
+    120px 120px,
+    160px 160px;
+
+  opacity: .25;
+
+  pointer-events: none;
+}
+
+/* cidades */
+
+.map-cities-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.map-city-badge {
+  flex: 1;
+
+  background: rgba(255,255,255,.05);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  border-radius: 16px;
+
+  padding: 10px;
+
+  backdrop-filter: blur(10px);
+}
+
+.city-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.city-dot.green {
+  background: #65f28a;
+}
+
+.city-dot.pink {
+  background: #ff6fbd;
+}
