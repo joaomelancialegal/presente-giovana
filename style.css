@@ -1849,3 +1849,47 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* LUA CHEIA ANIMADA */
+
+.moon-circle {
+  animation:
+    fullMoonReveal 1.8s ease-out forwards,
+    fullMoonGlow 4s ease-in-out infinite 1.8s;
+}
+
+@keyframes fullMoonReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.72);
+    filter: brightness(0.35) blur(2px);
+  }
+
+  65% {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: brightness(1.25) blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes fullMoonGlow {
+  0%,100% {
+    box-shadow:
+      inset -10px -8px 30px rgba(0,0,0,0.12),
+      0 0 55px rgba(255,255,255,0.38),
+      0 0 120px rgba(180,220,255,0.20);
+  }
+
+  50% {
+    box-shadow:
+      inset -6px -4px 18px rgba(0,0,0,0.08),
+      0 0 90px rgba(255,255,255,0.62),
+      0 0 190px rgba(180,220,255,0.36);
+  }
+}
