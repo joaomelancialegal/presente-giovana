@@ -2464,7 +2464,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   pointer-events: none !important;
 
   transform-origin: 50% 0% !important;
-  animation: pocketPendulumReal 2.8s ease-in-out infinite !important;
+  animation: pocketPendulumReal 3.5s ease-in-out infinite !important;
 }
 
 .slide-timer .gold-chain {
