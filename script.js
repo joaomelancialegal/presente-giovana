@@ -23,7 +23,7 @@ const CONFIG = {
 
   /* ── Datas ── */
   dataConheceram: '2025-08-14',   // quando se conheceram
-  dataNamero:     '2026-04-09',   // início do namoro (ISO format)
+  dataNamero:     '2026-04-09T00:00:00',   // início do namoro (ISO format)
   dataContagem:   '2026-07-10',   // contagem regressiva para esse dia (ex: 1 ano)
   labelContagem:  '10/07/2026',   // como mostrar essa data na tela
 
