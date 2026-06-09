@@ -2536,14 +2536,42 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 
 @keyframes pocketPendulumReal {
   0% {
-    transform: translateX(-50%) translateX(-31vw) rotate(18deg);
+    transform:
+      translateX(-50%)
+      translateX(-31vw)
+      translateY(-18px)
+      rotate(18deg);
+  }
+
+  25% {
+    transform:
+      translateX(-50%)
+      translateX(-15vw)
+      translateY(8px)
+      rotate(9deg);
   }
 
   50% {
-    transform: translateX(-50%) translateX(31vw) rotate(-18deg);
+    transform:
+      translateX(-50%)
+      translateX(31vw)
+      translateY(-18px)
+      rotate(-18deg);
+  }
+
+  75% {
+    transform:
+      translateX(-50%)
+      translateX(15vw)
+      translateY(8px)
+      rotate(-9deg);
   }
 
   100% {
-    transform: translateX(-50%) translateX(-31vw) rotate(18deg);
+    transform:
+      translateX(-50%)
+      translateX(-31vw)
+      translateY(-18px)
+      rotate(18deg);
   }
 }
