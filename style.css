@@ -2788,3 +2788,124 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   border: 1px solid rgba(255,255,255,0.13);
   backdrop-filter: blur(12px);
 }
+
+/* MINI MAPA CARTOON — DISTÂNCIA */
+
+.mini-world-map-card {
+  width: 100%;
+  max-width: 350px;
+  margin: 18px auto 14px;
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(circle at 30% 70%, rgba(29,185,84,0.18), transparent 28%),
+    radial-gradient(circle at 72% 35%, rgba(233,30,140,0.2), transparent 30%),
+    linear-gradient(180deg, #10031f 0%, #05000d 100%);
+  border: 1px solid rgba(255,130,220,0.28);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.55),
+    0 0 28px rgba(233,30,140,0.14);
+}
+
+.mini-world-map {
+  width: 100%;
+  display: block;
+}
+
+.continent {
+  fill: rgba(132, 73, 162, 0.55);
+  stroke: rgba(255,170,240,0.35);
+  stroke-width: 1.4;
+}
+
+.south-america {
+  fill: rgba(70, 190, 110, 0.28);
+}
+
+.europe-africa {
+  fill: rgba(185, 78, 170, 0.36);
+}
+
+.mini-route {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.route-back {
+  stroke: rgba(255,255,255,0.22);
+  stroke-width: 8;
+}
+
+.route-front {
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-dasharray: 5 9;
+  animation: miniRouteMove 2.6s linear infinite;
+}
+
+@keyframes miniRouteMove {
+  to {
+    stroke-dashoffset: -42;
+  }
+}
+
+.mini-plane {
+  font-size: 18px;
+  fill: white;
+  animation: miniPlaneFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes miniPlaneFloat {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.pin-pulse-green {
+  fill: rgba(101,242,138,0.2);
+  animation: miniPulse 2.2s ease-out infinite;
+}
+
+.pin-pulse-pink {
+  fill: rgba(255,111,189,0.22);
+  animation: miniPulse 2.2s ease-out infinite;
+  animation-delay: .5s;
+}
+
+@keyframes miniPulse {
+  0% {
+    r: 12;
+    opacity: .8;
+  }
+
+  100% {
+    r: 28;
+    opacity: 0;
+  }
+}
+
+.mini-map-label {
+  fill: white;
+  font-size: 13px;
+  font-weight: 800;
+  font-family: Inter, sans-serif;
+}
+
+.mini-map-sub {
+  fill: #65f28a;
+  font-size: 10px;
+  font-family: Inter, sans-serif;
+}
+
+.mini-map-sub.pink {
+  fill: #ff6fbd;
+}
+
+.slide-map .map-heart {
+  display: none;
+}
