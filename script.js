@@ -54,7 +54,6 @@ const CONFIG = {
   titulo: 'O céu quando tudo começou',
   signo: '♈ Áries',
   descricao: 'Assim estavam as estrelas\nquando nossa história começou.',
-  local: 'Porto • 09/04/2026'
   },
   
 
@@ -70,7 +69,7 @@ const CONFIG = {
     nome:        'Primavera',
     emoji:       '🌸',
     eyebrow:     '🌸 Primavera em Portugal',
-    sub:         'A estação da sua arvore favorita: Sakura!',
+    sub:         'A estação da sua arvore favorita Sakura!',
     detalhe:     'Em Portugal, abril marca o coração da primavera. As amendoeiras florescem, o céu clareia e o ar cheira a recomeço. Foi exatamente nisso que você disse sim. 🌺',
     gradiente:   'linear-gradient(160deg, #1a000d 0%, #2d0020 40%, #1a0010 70%, #000 100%)',
     particulas:  '#ff69b4',
