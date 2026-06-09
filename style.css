@@ -398,18 +398,6 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   pointer-events: none;
 }
 
-.slide-content {
-  align-items: center;
-  text-align: center;
-}
-
-.slide-constellation .slide-eyebrow,
-.slide-constellation .slide-headline,
-.slide-constellation .slide-sub {
-  text-align: center;
-  width: 100%;
-}
-
 /* ── Typography ── */
 .slide-eyebrow {
   font-size: 12px;
