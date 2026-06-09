@@ -2646,7 +2646,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 .slide-timer .pocket-watch-scene {
   top: 42% !important;
   transform-origin: 50% -360px !important;
-  animation: pocketPendulumSmooth 3.4s cubic-bezier(.45,0,.55,1) infinite !important;
+  animation: pocketPendulumSmooth 5s linear infinite !important;
 }
 
 .slide-timer .gold-chain {
