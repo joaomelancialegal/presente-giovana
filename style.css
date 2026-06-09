@@ -2517,3 +2517,64 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
     filter: brightness(1);
   }
 }
+
+/* CENTRALIZAR TEXTO DO CÉU */
+
+.slide-sky .sky-content {
+  align-items: center;
+  text-align: center;
+}
+
+.slide-sky .sky-info-card {
+  width: min(100%, 420px);
+}
+
+.slide-sky .sky-note {
+  text-align: center;
+}
+
+/* ESTRELAS PISCANDO */
+
+.sky-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sky-stars span {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+  background: white;
+
+  box-shadow:
+    0 0 8px rgba(255,255,255,.9),
+    0 0 20px rgba(180,220,255,.5);
+
+  animation: skyTwinkle 4s infinite;
+}
+
+.sky-stars span:nth-child(1){top:10%;left:10%;}
+.sky-stars span:nth-child(2){top:20%;left:80%;animation-delay:1s;}
+.sky-stars span:nth-child(3){top:35%;left:30%;animation-delay:2s;}
+.sky-stars span:nth-child(4){top:15%;left:55%;animation-delay:3s;}
+.sky-stars span:nth-child(5){top:50%;left:85%;animation-delay:.5s;}
+.sky-stars span:nth-child(6){top:65%;left:15%;animation-delay:2.5s;}
+.sky-stars span:nth-child(7){top:72%;left:45%;animation-delay:1.5s;}
+.sky-stars span:nth-child(8){top:55%;left:68%;animation-delay:3.5s;}
+
+@keyframes skyTwinkle {
+  0%,100% {
+    opacity:.25;
+    transform:scale(1);
+  }
+
+  50% {
+    opacity:1;
+    transform:scale(1.8);
+  }
+}
